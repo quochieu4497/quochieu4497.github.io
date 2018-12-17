@@ -6320,7 +6320,7 @@ html, body {
   margin: 0;
   padding: 0; }
 
-.menu {
+.container .menu {
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -6329,12 +6329,16 @@ html, body {
   top: 0px;
   z-index: 0; }
 
-.menu-container {
+.container h4 {
+  font-size: 1rem;
+  font-weight: 100; }
+
+.container .menu-container {
   will-change: transform, height;
-  width: 200px;
+  width: 150px;
   height: 500px;
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: inset -1px -1px 2px 0px #7171715e;
+  background-color: rgba(49, 49, 49, 0.69);
+  box-shadow: inset -1px -1px 2px 0px #bdb8b8;
   padding-left: 100px;
   box-sizing: border-box;
   transform: translate3d(-330px, -210px, 0px) rotate(45deg);
@@ -6342,74 +6346,82 @@ html, body {
   position: relative;
   transition: all .8s ease-in-out; }
 
-h3 {
+.container h3 {
   text-align: center;
   color: #fff; }
-  h3.text1:before {
+  .container h3.text1:before {
     content: 'M'; }
-  h3.text2:before {
+  .container h3.text2:before {
     content: 'N'; }
-  h3.text3:before {
+  .container h3.text3:before {
     content: 'U'; }
 
-nav.active .menu-container {
+.container nav.active .menu-container {
   height: 200%;
   transform: translate3d(-100px, 0px, 0px) rotate(0deg); }
+  .container nav.active .menu-container li {
+    position: relative; }
+    .container nav.active .menu-container li a {
+      font-size: 2.5rem;
+      font-weight: 900;
+      text-decoration: none;
+      text-transform: uppercase; }
+    .container nav.active .menu-container li .text {
+      z-index: -1;
+      position: absolute;
+      top: 20px;
+      visibility: hidden;
+      left: 100px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      transition: all .8s ease-in-out; }
 
-nav.active .menu-toggle h3.text1:before {
+.container nav.active .menu-toggle h3.text1:before {
   display: none; }
 
-nav.active .menu-toggle h3.text1:after {
+.container nav.active .menu-toggle h3.text1:after {
   opacity: 1;
   content: 'E'; }
 
-nav.active .menu-toggle h3.text2:before {
+.container nav.active .menu-toggle h3.text2:before {
   display: none; }
 
-nav.active .menu-toggle h3.text2:after {
+.container nav.active .menu-toggle h3.text2:after {
   opacity: 1;
   content: 'I'; }
 
-nav.active .menu-toggle h3.text3:before {
+.container nav.active .menu-toggle h3.text3:before {
   display: none; }
 
-nav.active .menu-toggle h3.text3:after {
+.container nav.active .menu-toggle h3.text3:after {
   opacity: 1;
   content: 'T'; }
 
-.menu-list {
+.container .menu-list {
   margin: 0;
   height: 100vh;
   padding-top: 100px;
-  padding-right: 20px;
   padding-bottom: 20px;
-  padding-left: 50px;
   list-style: none; }
 
-.menu-item {
+.container .menu-item {
   padding: .5rem 0;
   border-bottom: 2px solid rgba(187, 187, 187, 0.15);
-  min-width: 66px;
+  min-width: 35px;
   text-align: center;
-  transform: translateX(-50%); }
-  .menu-item a {
-    font-size: 2.5rem;
-    font-weight: 900;
-    text-decoration: none;
-    text-transform: uppercase; }
-    .menu-item a:hover {
-      color: rgba(253, 174, 88, 0.88); }
+  transform: translateX(-100%); }
 
-.menu-link {
+.container .menu-link {
   color: #fff;
   opacity: 0;
   transition: opacity .8s; }
 
-nav.active .menu-link {
+.container nav.active .menu-link {
   opacity: 1;
   transition-delay: .8s; }
 
-.menu-toggle {
+.container .menu-toggle {
   display: block;
   position: absolute;
   height: 15px;
@@ -6419,38 +6431,67 @@ nav.active .menu-link {
   background: transparent;
   cursor: pointer; }
 
-.menu-hamburger, .menu-hamburger:before, .menu-hamburger:after {
+.container .menu-hamburger, .container .menu-hamburger:before, .container .menu-hamburger:after {
   background-color: #fff;
   height: 3px;
   width: 20px;
   display: block;
   transition: all .8s; }
 
-.menu-hamburger {
+.container .menu-hamburger {
   position: relative;
   top: 5px;
   left: 0px; }
 
-.menu-hamburger:before {
+.container .menu-hamburger:before {
   content: '';
   position: absolute;
   top: -6px; }
 
-.menu-hamburger:after {
+.container .menu-hamburger:after {
   content: '';
   position: absolute;
   bottom: -6px; }
 
-.menu.active .menu-hamburger {
+.container .menu.active .menu-hamburger {
   background: transparent; }
 
-.menu.active .menu-hamburger:before {
+.container .menu.active .menu-hamburger:before {
   transform: rotate(-45deg);
   top: 0px; }
 
-.menu.active .menu-hamburger:after {
+.container .menu.active .menu-hamburger:after {
   transform: rotate(45deg);
   bottom: 0px; }
+
+@media (min-width: 768px) {
+  .container .menu-container {
+    width: 200px; }
+  .container .menu-list {
+    padding-top: 100px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px; }
+  .container .menu-item {
+    min-width: 70px;
+    transform: translateX(-50%); }
+  .container nav.active .menu-container li a:hover {
+    color: rgba(253, 174, 88, 0.88); }
+  .container nav.active .menu-container li:hover .text {
+    visibility: visible;
+    color: rgba(253, 174, 88, 0.88); }
+    .container nav.active .menu-container li:hover .text:before {
+      content: '';
+      position: absolute;
+      top: -25%;
+      border-radius: 20px;
+      left: 54%;
+      width: 150%;
+      height: 150%;
+      z-index: -1;
+      background: #00000078;
+      display: block;
+      transform: translateX(-50%); } }
 
 @media print {
   .container {
@@ -6461,7 +6502,7 @@ footer img {
 
 body {
   width: 100%;
-  background: url("../img/bg3.jpg") top center no-repeat;
+  background: url("../img/bg4.jpg") top center no-repeat;
   background-size: cover;
   position: relative;
   background-attachment: fixed; }
