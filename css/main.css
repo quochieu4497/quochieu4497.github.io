@@ -6320,7 +6320,11 @@ html, body {
   margin: 0;
   padding: 0; }
 
-.container .menu {
+@media print {
+  .container {
+    width: auto; } }
+
+header .container .menu {
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -6329,11 +6333,11 @@ html, body {
   top: 0px;
   z-index: 0; }
 
-.container h4 {
+header .container h4 {
   font-size: 1rem;
   font-weight: 100; }
 
-.container .menu-container {
+header .container .menu-container {
   will-change: transform, height;
   width: 150px;
   height: 500px;
@@ -6346,30 +6350,31 @@ html, body {
   position: relative;
   transition: all .8s ease-in-out; }
 
-.container h3 {
+header .container h3 {
   text-align: center;
   color: #fff; }
-  .container h3.text1:before {
+  header .container h3.text1:before {
     content: 'M'; }
-  .container h3.text2:before {
+  header .container h3.text2:before {
     content: 'N'; }
-  .container h3.text3:before {
+  header .container h3.text3:before {
     content: 'U'; }
 
-.container nav.active .menu-container {
+header .container nav.active .menu-container {
   height: 200%;
   transform: translate3d(-100px, 0px, 0px) rotate(0deg); }
-  .container nav.active .menu-container li {
+  header .container nav.active .menu-container li {
     position: relative; }
-    .container nav.active .menu-container li a {
+    header .container nav.active .menu-container li a {
       font-size: 2.5rem;
       font-weight: 900;
       text-decoration: none;
       text-transform: uppercase; }
-    .container nav.active .menu-container li .text {
+    header .container nav.active .menu-container li .text {
       z-index: -1;
       position: absolute;
       top: 20px;
+      display: none;
       visibility: hidden;
       left: 100px;
       font-size: 1rem;
@@ -6377,51 +6382,51 @@ html, body {
       color: #fff;
       transition: all .8s ease-in-out; }
 
-.container nav.active .menu-toggle h3.text1:before {
+header .container nav.active .menu-toggle h3.text1:before {
   display: none; }
 
-.container nav.active .menu-toggle h3.text1:after {
+header .container nav.active .menu-toggle h3.text1:after {
   opacity: 1;
   content: 'E'; }
 
-.container nav.active .menu-toggle h3.text2:before {
+header .container nav.active .menu-toggle h3.text2:before {
   display: none; }
 
-.container nav.active .menu-toggle h3.text2:after {
+header .container nav.active .menu-toggle h3.text2:after {
   opacity: 1;
   content: 'I'; }
 
-.container nav.active .menu-toggle h3.text3:before {
+header .container nav.active .menu-toggle h3.text3:before {
   display: none; }
 
-.container nav.active .menu-toggle h3.text3:after {
+header .container nav.active .menu-toggle h3.text3:after {
   opacity: 1;
   content: 'T'; }
 
-.container .menu-list {
+header .container .menu-list {
   margin: 0;
   height: 100vh;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 20px;
   list-style: none; }
 
-.container .menu-item {
+header .container .menu-item {
   padding: .5rem 0;
   border-bottom: 2px solid rgba(187, 187, 187, 0.15);
   min-width: 35px;
   text-align: center;
   transform: translateX(-100%); }
 
-.container .menu-link {
+header .container .menu-link {
   color: #fff;
   opacity: 0;
   transition: opacity .8s; }
 
-.container nav.active .menu-link {
+header .container nav.active .menu-link {
   opacity: 1;
   transition-delay: .8s; }
 
-.container .menu-toggle {
+header .container .menu-toggle {
   display: block;
   position: absolute;
   height: 15px;
@@ -6431,56 +6436,62 @@ html, body {
   background: transparent;
   cursor: pointer; }
 
-.container .menu-hamburger, .container .menu-hamburger:before, .container .menu-hamburger:after {
+header .container .menu-hamburger, header .container .menu-hamburger:before, header .container .menu-hamburger:after {
   background-color: #fff;
   height: 3px;
   width: 20px;
   display: block;
   transition: all .8s; }
 
-.container .menu-hamburger {
+header .container .menu-hamburger {
   position: relative;
   top: 5px;
   left: 0px; }
 
-.container .menu-hamburger:before {
+header .container .menu-hamburger:before {
   content: '';
   position: absolute;
   top: -6px; }
 
-.container .menu-hamburger:after {
+header .container .menu-hamburger:after {
   content: '';
   position: absolute;
   bottom: -6px; }
 
-.container .menu.active .menu-hamburger {
+header .container .menu.active .menu-hamburger {
   background: transparent; }
 
-.container .menu.active .menu-hamburger:before {
+header .container .menu.active .menu-hamburger:before {
   transform: rotate(-45deg);
   top: 0px; }
 
-.container .menu.active .menu-hamburger:after {
+header .container .menu.active .menu-hamburger:after {
   transform: rotate(45deg);
   bottom: 0px; }
 
 @media (min-width: 768px) {
-  .container .menu-container {
+  header .container .menu-container {
     width: 200px; }
-  .container .menu-list {
+  header .container .menu-list {
     padding-top: 100px;
     padding-right: 20px;
     padding-bottom: 20px;
     padding-left: 50px; }
-  .container .menu-item {
+  header .container .menu-item {
     min-width: 70px;
     transform: translateX(-50%); }
-  .container nav.active .menu-container li a:hover {
+  header .container nav.active .menu-list {
+    padding-top: 100px;
+    padding-bottom: 20px; }
+  header .container nav.active .menu-container .menu-item p {
+    transition: all .8s ease-in-out; }
+  header .container nav.active .menu-container .menu-item:hover a {
     color: rgba(253, 174, 88, 0.88); }
-  .container nav.active .menu-container li:hover .text {
+  header .container nav.active .menu-container .menu-item:hover .text {
     visibility: visible;
-    color: rgba(253, 174, 88, 0.88); }
-    .container nav.active .menu-container li:hover .text:before {
+    color: rgba(253, 174, 88, 0.88);
+    display: block; }
+    header .container nav.active .menu-container .menu-item:hover .text:before {
       content: '';
       position: absolute;
       top: -25%;
@@ -6493,18 +6504,33 @@ html, body {
       display: block;
       transform: translateX(-50%); } }
 
-@media print {
-  .container {
-    width: auto; } }
-
 footer img {
   max-width: 200px; }
 
-body {
-  width: 100%;
+.home-page {
   background: url("../img/bg4.jpg") top center no-repeat;
   background-size: cover;
-  position: relative;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 100%;
+  height: 100vh;
+  overflow: hidden; }
+  .home-page .container .text-typing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.3rem; }
+
+.about {
+  background: url("../img/bg2.jpg") top center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 100%;
+  height: 100vh;
+  overflow: hidden; }
 
 /*# sourceMappingURL=main.css.map */
