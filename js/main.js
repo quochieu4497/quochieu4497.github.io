@@ -31,6 +31,18 @@ $(function () {
 		$('select.form-control').removeClass('form-control').css('width', '100%');
 	}
 });
+///////////////////////
+//// loading page ////
+//////////////////////
+$(document).ready(function () {
+	setTimeout(function () {
+		$('.wrapper').addClass('loaded');
+	}, 1500);
+});
+///////////////////////
+///// menu toggle /////
+//////////////////////
+
 $('.menu-toggle').on('click', function () {
 	$('.menu').toggleClass('active');
 });
@@ -48,6 +60,11 @@ var SI = setInterval(function () {
 		clearInterval(SI);
 	}
 }, 97);
+
+///////////////////////
+///// particlesjs /////
+//////////////////////
+
 
 particlesJS('particles-js', {
 	"particles": {
