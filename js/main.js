@@ -37,7 +37,7 @@ $(function () {
 $(document).ready(function () {
 	setTimeout(function () {
 		$('.wrapper').addClass('loaded');
-	}, 1500);
+	}, 1200);
 });
 ///////////////////////
 ///// menu toggle /////
@@ -50,7 +50,7 @@ var str = 'Xin chào. Tôi là Hiếu.\nHay bạn có thể gọi tôi là Hus.\
 var split = str.split('');
 var counter = 0;
 var SI = setInterval(function () {
-	var tyt = $('body .container .text-typing');
+	var tyt = $('.text-typing');
 	tyt.append(split[counter]);
 	counter++;
 	if (split[counter] === '\n') {
