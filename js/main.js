@@ -37,7 +37,7 @@ $(function () {
 $(document).ready(function () {
 	setTimeout(function () {
 		$('.wrapper').addClass('loaded');
-	}, 1200);
+	}, 800);
 });
 ///////////////////////
 ///// menu toggle /////
@@ -46,7 +46,7 @@ $(document).ready(function () {
 $('.menu-toggle').on('click', function () {
 	$('.menu').toggleClass('active');
 });
-var str = 'Xin chào. Tôi là Hiếu.\nHay bạn có thể gọi tôi là Hus.\nTôi là một Designer, một Front-end Developer.\nNếu bạn muốn có một cuộc gặp hãy gọi cho tôi vào tối Thứ 7 nhé.!';
+var str = 'Xin chào. Tôi là Hiếu.\nHay bạn có thể gọi tôi là Hus.\nTôi là một Designer, một Front-end Developer.\nNếu bạn muốn có một cuộc gặp hãy liên hệ tôi vào tối Thứ 7 nhé.!';
 var split = str.split('');
 var counter = 0;
 var SI = setInterval(function () {
@@ -61,124 +61,11 @@ var SI = setInterval(function () {
 	}
 }, 97);
 
-// ///////////////////////
-// ///// particlesjs /////
-// //////////////////////
-
-
-// particlesJS('particles-js', {
-// 	"particles": {
-// 		"number": {
-// 			"value": 160,
-// 			"density": {
-// 				"enable": true,
-// 				"value_area": 800
-// 			}
-// 		},
-// 		"color": {
-// 			"value": '#ffeaac'
-// 		},
-// 		"shape": {
-// 			"type": "circle",
-// 			"stroke": {
-// 				"width": 0,
-// 				"color": "#3439aa"
-// 			},
-// 			"polygon": {
-// 				"nb_sides": 5
-// 			},
-// 			"image": {
-// 				"src": "img/github.svg",
-// 				"width": 100,
-// 				"height": 100
-// 			}
-// 		},
-// 		"opacity": {
-// 			"value": 1,
-// 			"random": true,
-// 			"anim": {
-// 				"enable": true,
-// 				"speed": 1,
-// 				"opacity_min": 0,
-// 				"sync": false
-// 			}
-// 		},
-// 		"size": {
-// 			"value": 3,
-// 			"random": true,
-// 			"anim": {
-// 				"enable": false,
-// 				"speed": 4,
-// 				"size_min": 0.3,
-// 				"sync": false
-// 			}
-// 		},
-// 		"line_linked": {
-// 			"enable": false,
-// 			"distance": 150,
-// 			"color": {
-// 				"value": ['#e99', '#2ee', '#eeee12']
-// 			},
-// 			"opacity": 0.4,
-// 			"width": 1
-// 		},
-// 		"move": {
-// 			"enable": true,
-// 			"speed": 1.5,
-// 			"direction": "random",
-// 			"random": true,
-// 			"straight": false,
-// 			"out_mode": "bounce",
-// 			"bounce": false,
-// 			"attract": {
-// 				"enable": false,
-// 				"rotateX": 3000,
-// 				"rotateY": 1500
-// 			}
-// 		}
-// 	},
-// 	"interactivity": {
-// 		"detect_on": "canvas",
-// 		"events": {
-// 			"onhover": {
-// 				"enable": true,
-// 				"mode": "grab"
-// 			},
-// 			"onclick": {
-// 				"enable": true,
-// 				"mode": "repulse"
-// 			},
-// 			"resize": true
-// 		},
-// 		"modes": {
-// 			"grab": {
-// 				"distance": 400,
-// 				"line_linked": {
-// 					"opacity": 1
-// 				}
-// 			},
-// 			"bubble": {
-// 				"distance": 250,
-// 				"size": 0,
-// 				"duration": 2,
-// 				"opacity": 0,
-// 				"speed": 3
-// 			},
-// 			"repulse": {
-// 				"distance": 400,
-// 				"duration": 0.4
-// 			},
-// 			"push": {
-// 				"particles_nb": 4
-// 			},
-// 			"remove": {
-// 				"particles_nb": 2
-// 			}
-// 		}
-// 	},
-// 	"retina_detect": true
-// });
 //# sourceMappingURL=main.js.map
+
+///////////////////////
+//////// games ///////
+//////////////////////
 $(document).ready(function() {
 	var attempt = [], simon = [], level = 1, /*lives = 3*/ index = 0, flag = true, color = "", playerTurn = false, soundIndex;
 	var slices = ["red", "blue", "yellow", "green"];
@@ -200,7 +87,7 @@ $(document).ready(function() {
 			soundIndex = slices.indexOf(color);
 			sounds[soundIndex].play();
 			if (attempt[index] !== simon[index]) {// if guess is incorrect
-				alert("Sai rồi ba");
+				alert("Try Again");
 				reset();
 			}
 			else {
@@ -249,7 +136,7 @@ $(document).ready(function() {
 							$("#"+simon[i]).removeClass('hover');
 						}, 150);
 						// make selected slice blink
-					}, i * 800);
+					}, i * 300);
 				})(i);// make it user's turn to play
 			}
 		}, 2000);
