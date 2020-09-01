@@ -1,3 +1,131 @@
+.menuAbout {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    cursor: pointer;
+    pointer-events: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    height: 40px;
+  }
+  .menuAbout a{
+      color: #ffffff;
+  }
+  .menuAbout:hover {
+    pointer-events: all;
+  }
+  .menuAbout .label {
+    display: inline-block;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  .menuAbout .spacer {
+    display: inline-block;
+    width: 80px;
+    margin-left: 15px;
+    margin-right: 15px;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+  }
+  .menuAbout .spacer:before {
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid #ffffff;
+    height: 1px;
+    width: 0%;
+    transition: width 0.25s ease;
+    transition-delay: 0.7s;
+  }
+  .menuAbout .item {
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+    top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease, top 0.5s ease;
+    transition-delay: 0;
+  }
+  .menuAbout .item:hover{
+    -webkit-animation: text-focus-in 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  }
+  .menuAbout span {
+    transition: color 0.5s ease;
+  }
+  .menuAbout .item:hover span {
+    color: #fff000;
+  }
+  .menuAbout:hover .spacer:before {
+    width: 100%;
+    transition-delay: 0s;
+  }
+  .menuAbout:hover .item {
+    opacity: 1;
+    top: 0px;
+  }
+  .menuAbout .item:nth-child(1) {
+    transition-delay: 0.45s;
+  }
+  .menuAbout .item:nth-child(2) {
+    transition-delay: 0.4s;
+  }
+  .menuAbout .item:nth-child(3) {
+    transition-delay: 0.35s;
+  }
+  .menuAbout .item:nth-child(4) {
+    transition-delay: 0.3s;
+  }
+  .menuAbout .item:nth-child(5) {
+    transition-delay: 0.25s;
+  }
+  .menuAbout .item:nth-child(6) {
+    transition-delay: 0.2s;
+  }
+  .menuAbout .item:nth-child(7) {
+    transition-delay: 0.15s;
+  }
+  .menuAbout .item:nth-child(8) {
+    transition-delay: 0.1s;
+  }
+  .menuAbout .item:nth-child(9) {
+    transition-delay: 0.05s;
+  }
+  .menuAbout .item:nth-child(10) {
+    transition-delay: 0s;
+  }
+  .menuAbout:hover .item:nth-child(1) {
+    transition-delay: 0.25s;
+  }
+  .menuAbout:hover .item:nth-child(2) {
+    transition-delay: 0.3s;
+  }
+  .menuAbout:hover .item:nth-child(3) {
+    transition-delay: 0.35s;
+  }
+  .menuAbout:hover .item:nth-child(4) {
+    transition-delay: 0.4s;
+  }
+  .menuAbout:hover .item:nth-child(5) {
+    transition-delay: 0.45s;
+  }
+  .menuAbout:hover .item:nth-child(6) {
+    transition-delay: 0.5s;
+  }
+  .menmenuAboutu:hover .item:nth-child(7) {
+    transition-delay: 0.55s;
+  }
+  .menuAbout:hover .item:nth-child(8) {
+    transition-delay: 0.6s;
+  }
+  .menuAbout:hover .item:nth-child(9) {
+    transition-delay: 0.65s;
+  }
+  .menuAbout:hover .item:nth-child(10) {
+    transition-delay: 0.7s;
+  }
 /* Full page JS */
 [class^="icon-"]:after,
 [class*=" icon-"]:after {
@@ -18,6 +146,7 @@
   height: 40px;
 }
 .icon-up-open-big:hover {	
+    
     color: red;
     -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -311,7 +440,31 @@ h3 {
     display: none;
   }
 }
-
+@-webkit-keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+  
 @media screen and (max-width: 400px) {
   html {
     font-size: 50%;
