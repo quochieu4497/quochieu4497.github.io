@@ -1,13 +1,4 @@
-.about{
-    background: rgb(7,42,62);
-    background: -moz-linear-gradient(135deg, rgba(7,42,62,1) 0%, rgba(30,68,89,1) 35%, rgba(59,107,139,1) 100%);
-    background: -webkit-linear-gradient(135deg, rgba(7,42,62,1) 0%, rgba(30,68,89,1) 35%, rgba(59,107,139,1) 100%);
-    background: linear-gradient(135deg, rgba(7,42,62,1) 0%, rgba(30,68,89,1) 35%, rgba(59,107,139,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#072a3e",endColorstr="#3b6b8b",GradientType=1);
-}
 /* Full page JS */
-
-
 [class^="icon-"]:after,
 [class*=" icon-"]:after {
   font-family: "untitled-font-1";
